@@ -1,10 +1,40 @@
-app-auth-form {
-  background: black;
-  height: 150px;
-  width: 48%;
-  margin-left: 1%;
-}
+
 
 .body {
+  app-auth-form {
+    border-radius: 10px;
+    background: black;
+    height: 257px;
+    width: 48%;
+    min-width: 156px;
+    margin-left: 1%;
+  }
+
   display: flex;
+
+  .Create {
+    color: green;
+    width: 133px;
+    margin: auto;
+    margin-top: 10px;
+  }
+  .Login {
+    color: green;
+    width: 50px;
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  button {
+    background: white;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    width: 100%;
+
+    &:hover {
+      background: green;
+    }
+  }
+
 }

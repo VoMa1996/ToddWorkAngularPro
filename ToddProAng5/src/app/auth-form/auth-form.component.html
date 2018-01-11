@@ -2,8 +2,8 @@
   <h3>no sub</h3>
 </div> -->
 <div class="LoginPage" >
-  <form (ngSubmit)="onSubmit(form.value)" #form="ngForm" novalidate>
-    <ng-content></ng-content>
+  <form class="form" (ngSubmit)="onSubmit(form.value)" #form="ngForm" novalidate>
+    <ng-content select="h3"></ng-content>
     <label>
       Email address
       <input type="email" name="email" ngModel>
@@ -12,6 +12,10 @@
       Password
       <input type="password" name="password" ngModel>
     </label>
-    <ng-content select="auth-remember"></ng-content>
+    <ng-content select="app-auth-remember"></ng-content><tr>
+    <ng-content select="button"></ng-content>
+    <div *ngIf="showMessage">
+      You will be loged for 30 days
+    </div>
   </form>
 </div>
