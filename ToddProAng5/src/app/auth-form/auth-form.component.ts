@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, ViewChild, ElementRef, ViewChildren, AfterViewInit, OnInit, Output, EventEmitter, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import { Component, ChangeDetectorRef, Renderer, ViewChild, ElementRef, ViewChildren, AfterViewInit, OnInit, Output, EventEmitter, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthForm } from './auth-form.interface';
 import { AuthRememberComponent } from '../auth-remember/auth-remember.component';
@@ -13,6 +13,7 @@ export class AuthFormComponent implements AfterContentInit {
   // submitted: boolean = false;
   showMessage: boolean;
   @ViewChild('email') email: ElementRef;
+  @ViewChild('password') password: ElementRef;
 
   @ViewChildren(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
 
@@ -20,10 +21,24 @@ export class AuthFormComponent implements AfterContentInit {
 
   @Output() submitted: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(
+    private renderer: Renderer,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngAfterViewInit() {
-    console.log(this.email);
+
+    this.renderer.setElementAttribute(this.email.nativeElement, 'placeholder', 'test');
+    this.renderer.setElementClass(this.email.nativeElement, 'email', true);
+    this.renderer.invokeElementMethod(this.email.nativeElement, 'focus');
+    // this.email.nativeElement.setAttribute('placeholder', ' Enter your email');
+    // this.email.nativeElement.classList.add('email');
+    // this.email.nativeElement.focus();
+
+
+    this.password.nativeElement.setAttribute('placeholder', ' Enter your password');
+
+    // console.log(this.password.nativeElement);
 
     if (this.message) {
         this.message.forEach((itemMessage) => {

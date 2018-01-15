@@ -9,7 +9,6 @@
 
     input {
       outline: none;
-      border: none;
       border-radius: 10px;
       height: 40px;
       width: 100%;
@@ -18,4 +17,8 @@
     }
   }
 
+}
+
+.email {
+  border-color: red;
 }
