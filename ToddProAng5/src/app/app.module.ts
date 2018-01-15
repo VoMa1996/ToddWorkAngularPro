@@ -6,13 +6,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
+import { AuthMessageComponent } from './auth-message/auth-message.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthFormComponent,
-    AuthRememberComponent
+    AuthRememberComponent,
+    AuthMessageComponent
   ],
   imports: [
     BrowserModule,
