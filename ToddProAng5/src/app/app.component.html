@@ -14,7 +14,13 @@
     <!-- <h3 class="Login">Login</h3>
     <app-auth-remember (checked)="rememberUser($event)"></app-auth-remember>
     <button type="submit">Login</button> -->
-    <button (click)="destroyComponents()">Destroy</button>
-    <button (click)="moveComponents()">Move</button>
+    <!-- <button (click)="destroyComponents()">Destroy</button>
+    <button (click)="moveComponents()">Move</button> -->
   </div>
+  <!-- <template #tmpl let-name let-location="location">
+    Volodymyr Maliarov: {{location}}
+  </template> -->
+  <ng-template #tmpl let-name let-location="location">
+    {{name}}: {{location}}
+  </ng-template>
 </div>
