@@ -3,17 +3,27 @@
 </div> -->
 <div class="LoginPage" >
   <form class="form" (ngSubmit)="onSubmit(form.value)" #form="ngForm" novalidate>
-    <ng-content select="h3"></ng-content>
-    <label>
-      Email address
-      <input type="email" name="email" ngModel #email>
-    </label>
-    <label>
-      Password
-      <input type="password" name="password" ngModel #password>
-    </label>
+    <!-- <ng-content select="h3"></ng-content> -->
+    <div class="tableName">
+      <h3>{{title}}</h3>
+    </div>
+    <div class="email">
+     <label>
+       Email address
+       <input type="email" name="email" ngModel #email>
+      </label>
+    </div>
+    <div class="password">
+      <label>
+        Password
+        <input type="password" name="password" ngModel #password>
+      </label>
+    </div>
     <ng-content select="app-auth-remember"></ng-content><tr>
-    <ng-content select="button"></ng-content>
+        <!-- <app-auth-remember (checked)="rememberUser($event)"></app-auth-remember> -->
+        <div class="createBut">
+            <button type="submit">{{title}}</button>
+        </div>
     <app-auth-message [style.display]="(showMessage ? 'inherit':'none')"></app-auth-message>
 
     <!-- <div *ngIf="showMessage">

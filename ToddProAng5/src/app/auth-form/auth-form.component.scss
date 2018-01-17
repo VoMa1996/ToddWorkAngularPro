@@ -1,7 +1,42 @@
 .LoginPage {
-  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
   width: 90%;
+  height: auto;
   margin: auto;
+
+  .tableName {
+    width: 53%;
+    margin: auto;
+  }
+
+  .createBut {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+
+    button {
+      border: 0;
+      border-radius: 5px;
+      outline: none;
+      width: 100%;
+    }
+    button:hover {
+      background: green;
+    }
+  }
+
+  .email {
+    margin-top: 10px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .password {
+    width: 90%;
+    margin: auto;
+  }
 
   .form {
     width: 100%;
