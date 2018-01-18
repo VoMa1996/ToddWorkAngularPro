@@ -26,6 +26,11 @@ export class AppComponent implements AfterContentInit{
     private resolver: ComponentFactoryResolver
   ) {}
 
+  ctx = {
+    $implicit: 'Volodymyr Maliarov',
+    location: 'Poland, PL'
+  };
+
   ngAfterContentInit(){
 
     this.entry.createEmbeddedView(this.tmpl, {

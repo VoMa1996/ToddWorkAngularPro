@@ -11,16 +11,15 @@
   </app-auth-form> -->
 
   <div class="entryComponent" #entry>
-    <!-- <h3 class="Login">Login</h3>
-    <app-auth-remember (checked)="rememberUser($event)"></app-auth-remember>
-    <button type="submit">Login</button> -->
-    <!-- <button (click)="destroyComponents()">Destroy</button>
-    <button (click)="moveComponents()">Move</button> -->
+  
   </div>
-  <!-- <template #tmpl let-name let-location="location">
-    Volodymyr Maliarov: {{location}}
-  </template> -->
+
+  <ng-container [ngTemplateOutlet]="tmpl" [ngTemplateOutletContext]="ctx">
+
+  </ng-container>
+
   <ng-template #tmpl let-name let-location="location">
-    {{name}}: {{location}}
+    {{name}} : {{location}}
+    <!-- {{name}}: {{location}} -->
   </ng-template>
 </div>
